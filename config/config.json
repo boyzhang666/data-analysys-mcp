@@ -1,0 +1,8 @@
+{
+    "XXX": {
+        "host": "192.168.20.23",
+        "port": 6379,
+        "database": 0,
+        "password": "XXX"
+    }
+}

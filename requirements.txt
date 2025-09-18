@@ -1,0 +1,10 @@
+fastapi==0.109.2
+uvicorn==0.24.0.post1
+pydantic==2.5.2
+ujson==5.8.0
+fastapi-mcp>=0.1.0
+numpy>=1.24.0
+scipy>=1.10.0
+statsmodels>=0.14.0
+arch>=6.2.0
+pandas>=1.5.0
