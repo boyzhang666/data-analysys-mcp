@@ -1,9 +1,10 @@
 import logging
 import numpy as np
-from pydantic import BaseModel, Field, field_validator
-from typing import List, Optional
-from fastapi import HTTPException, APIRouter
 from enum import Enum
+from typing import List, Optional
+from pydantic import BaseModel, Field
+from fastapi import HTTPException, APIRouter
+
 from config.config import *
 
 # 全局配置
@@ -64,7 +65,7 @@ class CorrelationResponse(BaseModel):
 async def correlation_calculate(request: CorrelationRequest):
     """
     计算两组数据之间的相关系数，支持多种相关性分析方法
-    
+
     **参数说明：**
     - **data1**: 第一组数值数据，至少包含2个数据点
     - **data2**: 第二组数值数据，长度必须与data1相同

@@ -1,8 +1,9 @@
 import logging
 import numpy as np
-from pydantic import BaseModel, Field, validator
 from typing import List, Optional
+from pydantic import BaseModel, Field
 from fastapi import HTTPException, APIRouter
+
 from config.config import *
 
 # 全局配置

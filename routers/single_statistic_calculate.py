@@ -1,11 +1,12 @@
 import logging
 import numpy as np
-from pydantic import BaseModel, Field
-from typing import List, Optional
-from fastapi import HTTPException, APIRouter
-from statsmodels.tsa.stattools import adfuller, kpss
-from arch.unitroot import PhillipsPerron
 from enum import Enum
+from typing import List, Optional
+from arch.unitroot import PhillipsPerron
+from pydantic import BaseModel, Field
+from statsmodels.tsa.stattools import adfuller, kpss
+from fastapi import HTTPException, APIRouter
+
 from config.config import *
 
 # 全局配置

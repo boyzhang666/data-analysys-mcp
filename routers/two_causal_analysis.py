@@ -1,11 +1,12 @@
 import logging
 import numpy as np
 import pandas as pd
-from pydantic import BaseModel, Field, field_validator
-from typing import List, Optional, Dict, Any, Tuple
-from fastapi import HTTPException, APIRouter
-from statsmodels.tsa.stattools import grangercausalitytests
 from enum import Enum
+from typing import List, Optional, Dict, Any
+from fastapi import HTTPException, APIRouter
+from pydantic import BaseModel, Field, field_validator
+from statsmodels.tsa.stattools import grangercausalitytests
+
 from config.config import *
 
 # 全局配置

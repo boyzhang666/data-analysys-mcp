@@ -1,10 +1,11 @@
 import logging
 import numpy as np
-from pydantic import BaseModel, Field, field_validator
-from typing import List, Optional, Dict, Any
-from fastapi import HTTPException, APIRouter
-from scipy import stats
 from enum import Enum
+from scipy import stats
+from typing import List, Optional
+from pydantic import BaseModel, Field
+from fastapi import HTTPException, APIRouter
+
 from config.config import *
 
 # 全局配置

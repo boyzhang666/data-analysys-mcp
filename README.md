@@ -79,7 +79,7 @@ python main.py
 
 ### MCP客户端配置
 
-选择可流式传输的 HTTP （streamableHttp）：
+选择`可流式传输的 HTTP （streamableHttp）：`
 
 - URL: `http://127.0.0.1:6003/mcp`
 
