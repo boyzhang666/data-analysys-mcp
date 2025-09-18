@@ -1,17 +1,17 @@
-# # Byte-compiled
-# __pycache__/
+# Byte-compiled
+__pycache__/
 
-# # VS Code
-# .vscode/
-# !.vscode/settings.json
+# VS Code
+.vscode/
+!.vscode/settings.json
 
-# # macOS
-# .DS_Store
+# macOS
+.DS_Store
 
-# # Linux
-# *~
+# Linux
+*~
 
-# # Project specific
-# *.tmp
-# *.temp
-# test_*.py
+# Project specific
+*.tmp
+*.temp
+test_*.py
