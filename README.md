@@ -5,6 +5,7 @@
 ## 🚀 功能特性
 
 ### 核心分析工具
+
 - **相关性分析**: 支持Pearson、Spearman、Kendall相关系数计算
 - **平稳性检验**: 提供ADF、PP、KPSS时间序列平稳性检验
 - **分布分析**: 数据分布特征和趋势模式分析
@@ -14,6 +15,7 @@
 - **时间序列预测**: 多项式趋势预测、指数平滑预测（专为分钟级数据优化）
 
 ### 技术特点
+
 - 基于FastAPI-MCP架构，支持AI工具调用
 - RESTful API接口，易于集成
 - 完整的数据验证和错误处理
@@ -48,17 +50,20 @@ data_analysis_mcp/
 ## 🛠️ 安装和使用
 
 ### 环境要求
+
 - Python 3.8+
 - FastAPI
 - NumPy, SciPy, Pandas
 - Statsmodels
 
 ### 安装依赖
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 启动服务
+
 ```bash
 python main.py
 ```
@@ -66,17 +71,26 @@ python main.py
 服务将在 `http://localhost:6003` 启动。
 
 ### API文档
+
 启动服务后，访问以下地址查看API文档：
+
 - Swagger UI: `http://localhost:6003/docs`
 - ReDoc: `http://localhost:6003/redoc`
-- MCP工具列表: `http://localhost:6003/mcp/tools`
+
+### MCP客户端配置
+
+选择可流式传输的 HTTP （streamableHttp）：
+
+- URL: `http://127.0.0.1:6003/mcp`
 
 ## 📊 API接口说明
 
 ### 1. 两变量相关性分析 (`/api/correlation`)
+
 计算两组数据间的相关系数，支持Pearson、Spearman、Kendall相关性度量方法。
 
 **请求示例：**
+
 ```json
 {
     "data1": [1.0, 2.0, 3.0, 4.0, 5.0],
@@ -86,9 +100,11 @@ python main.py
 ```
 
 ### 2. 单变量平稳性检验 (`/api/statistic_calculate`)
+
 执行时间序列平稳性检验，支持ADF、PP、KPSS检验方法。
 
 **请求示例：**
+
 ```json
 {
     "data": [1.2, 2.3, 1.8, 4.5, 2.1, 3.2, 1.9, 2.8, 3.5, 6.1],
@@ -98,9 +114,11 @@ python main.py
 ```
 
 ### 3. 单变量分布分析 (`/api/distribution_analysis`)
+
 分析单个变量的分布特征和趋势模式。
 
 **请求示例：**
+
 ```json
 {
     "data": [1.2, 2.3, 1.8, 4.5, 2.1, 3.2, 1.9, 2.8, 3.5, 6.1]
@@ -108,9 +126,11 @@ python main.py
 ```
 
 ### 4. 单变量异常值检测 (`/api/outlier_detection`)
+
 使用多种方法检测单个变量数据中的异常值。
 
 **请求示例：**
+
 ```json
 {
     "data": [1.2, 2.3, 1.8, 4.5, 2.1, 3.2, 1.9, 2.8, 3.5, 6.1, 15.0],
@@ -119,9 +139,11 @@ python main.py
 ```
 
 ### 5. 两变量因果关系分析 (`/api/causal_analysis`)
+
 分析两个变量间的因果关系，支持格兰杰因果检验等方法。
 
 **请求示例：**
+
 ```json
 {
     "data1": [1.2, 2.3, 1.8, 4.5, 2.1, 3.2, 1.9, 2.8, 3.5, 6.1],
@@ -132,9 +154,11 @@ python main.py
 ```
 
 ### 6. 多变量因果关系分析 (`/api/multi_causal_analysis`)
+
 分析多个测点之间的因果关系网络，识别影响关系。
 
 **请求示例：**
+
 ```json
 {
     "data": {
@@ -147,9 +171,11 @@ python main.py
 ```
 
 ### 7. 两变量时序相似度分析 (`/api/similarity_analysis`)
+
 分析两个时间序列的相似度和最佳匹配区间。
 
 **请求示例：**
+
 ```json
 {
     "data1": [1.2, 2.3, 1.8, 4.5, 2.1, 3.2, 1.9, 2.8, 3.5, 6.1],
@@ -160,9 +186,11 @@ python main.py
 ```
 
 ### 8. 单变量时间序列预测 (`/api/time_series_forecast`)
+
 对单个指标的历史数据进行未来预测，专为分钟级数据优化。
 
 **请求示例：**
+
 ```json
 {
     "data": [10, 11, 12, 13, 14],
@@ -174,6 +202,7 @@ python main.py
 ## 🔧 配置说明
 
 ### 配置文件 (`config/config.json`)
+
 ```json
 {
     "server": {
@@ -191,6 +220,7 @@ python main.py
 ## 📝 开发说明
 
 ### 添加新的分析工具
+
 1. 在 `routers/` 目录下创建新的路由文件
 2. 定义请求和响应模型
 3. 实现分析逻辑
@@ -198,6 +228,7 @@ python main.py
 5. 更新MCP配置中的 `include_operations`
 
 ### 代码规范
+
 - 使用Pydantic进行数据验证
 - 添加详细的API文档字符串
 - 实现完整的错误处理
@@ -207,12 +238,14 @@ python main.py
 ## 📈 应用场景
 
 ### 工业应用
+
 - 设备状态监控和异常检测
 - 过程参数相关性分析
 - 生产数据质量评估
 - 预测模型特征工程
 
 ### 数据科学
+
 - 探索性数据分析(EDA)
 - 时间序列分析
 - 统计建模预处理
@@ -233,6 +266,7 @@ python main.py
 ## 📞 联系方式
 
 如有问题或建议，请通过以下方式联系：
+
 - 提交 Issue
 - 发送邮件
   - 邮箱：[zhangboy666@gmail.com]
